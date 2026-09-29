@@ -1,0 +1,31 @@
+{
+  "name": "comp-protocol-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build && vite",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build && node scripts/export.mjs && node scripts/verify.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "verify": "node scripts/verify.mjs",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check-chain": "node scripts/check-chain.mjs"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "viem": "^2.37.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.20.4",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.2",
+    "vite": "^6.3.6"
+  }
+}

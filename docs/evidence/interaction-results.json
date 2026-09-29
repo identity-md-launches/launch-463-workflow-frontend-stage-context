@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "executedAt": "2026-09-29T18:05:55.182Z",
+  "mode": "Production static export at gateway subpath; fully mocked public RPC and injected EIP-1193 wallet",
+  "tests": [
+    {
+      "name": "disconnected primary controls and missing-wallet feedback",
+      "status": "passed",
+      "durationMs": 624
+    },
+    {
+      "name": "unknown wallet chain offers exact add-chain parameters and then connects",
+      "status": "passed",
+      "durationMs": 561
+    },
+    {
+      "name": "keyboard-activated approval, deposit, mint, repay and withdraw loop updates visible balances and rights",
+      "status": "passed",
+      "durationMs": 1834
+    },
+    {
+      "name": "invalid inputs and unsafe position changes cannot request transactions",
+      "status": "passed",
+      "durationMs": 999
+    },
+    {
+      "name": "health state displays green, amber and red at exact CR boundaries",
+      "status": "passed",
+      "durationMs": 5906
+    },
+    {
+      "name": "grantRights appears for on-chain deployer only and increases rights",
+      "status": "passed",
+      "durationMs": 1050
+    },
+    {
+      "name": "wallet rejection and simulation revert are visible and preserve retry controls",
+      "status": "passed",
+      "durationMs": 1208
+    },
+    {
+      "name": "pending receipts prevent duplicate actions and failed receipts do not report success",
+      "status": "passed",
+      "durationMs": 3786
+    },
+    {
+      "name": "cancelled and replaced transactions avoid false success; repricing completes once",
+      "status": "passed",
+      "durationMs": 2767
+    },
+    {
+      "name": "read failure disables writes until live state recovers",
+      "status": "passed",
+      "durationMs": 841
+    },
+    {
+      "name": "late older reads cannot overwrite a newly confirmed position",
+      "status": "passed",
+      "durationMs": 1276
+    },
+    {
+      "name": "missing deployed code prevents transaction eligibility",
+      "status": "passed",
+      "durationMs": 403
+    },
+    {
+      "name": "tampered runtime ABI blocks verification and all signing",
+      "status": "passed",
+      "durationMs": 406
+    },
+    {
+      "name": "exact balance disclosure retains one-wei precision and large values reflow at 320px",
+      "status": "passed",
+      "durationMs": 639
+    },
+    {
+      "name": "responsive export, accessibility, keyboard focus and media preferences",
+      "status": "passed",
+      "durationMs": 3213
+    }
+  ],
+  "viewports": [
+    {
+      "width": 320,
+      "height": 844,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 768,
+      "height": 1000,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "horizontalOverflow": false
+    }
+  ],
+  "accessibility": [
+    {
+      "width": 390,
+      "violations": [],
+      "passes": 27,
+      "incomplete": []
+    },
+    {
+      "width": 1440,
+      "violations": [],
+      "passes": 28,
+      "incomplete": []
+    }
+  ],
+  "screenshots": [
+    "web/tests/evidence/mobile.png",
+    "web/tests/evidence/desktop.png"
+  ],
+  "errors": [],
+  "limitations": [
+    "No transaction was broadcast to Sepolia; wallet confirmations, RPC state and receipts were simulated.",
+    "No hardware/mobile wallet, WalletConnect, screen reader or native browser zoom testing.",
+    "Automated accessibility checks do not certify full WCAG conformance.",
+    "The 180-second unknown-confirmation timeout and chain reorganizations were not exercised."
+  ],
+  "browser": "145.0.7632.6",
+  "deploymentManifestSha256": "38de1619b861f3043d0bd1d4959cca1c1f6c697b37272e28d5efad1fde2fe16e",
+  "controlContrast": [
+    {
+      "selector": ".amount-field",
+      "border": "rgb(119, 135, 123)",
+      "background": "rgb(16, 19, 18)",
+      "ratio": 4.93
+    },
+    {
+      "selector": ".action-selector button[aria-pressed=false]",
+      "border": "rgb(119, 135, 123)",
+      "background": "rgb(24, 28, 26)",
+      "ratio": 4.54
+    }
+  ],
+  "keyboard": {
+    "tag": "A",
+    "text": "Skip to content",
+    "outline": "solid",
+    "width": "2px"
+  },
+  "reducedMotion": true,
+  "forcedColors": true,
+  "summary": {
+    "passed": 15,
+    "failed": 0
+  }
+}

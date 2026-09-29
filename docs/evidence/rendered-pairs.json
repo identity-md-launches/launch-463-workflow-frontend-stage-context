@@ -1,0 +1,37 @@
+{
+  "width": 1440,
+  "scrollWidth": 1440,
+  "pairs": [
+    {
+      "name": "body text/page",
+      "foreground": "rgb(238, 243, 238)",
+      "background": "rgb(16, 19, 18)",
+      "ratio": 16.63
+    },
+    {
+      "name": "muted text/surface",
+      "foreground": "rgb(170, 182, 174)",
+      "background": "rgb(24, 28, 26)",
+      "ratio": 8.21
+    },
+    {
+      "name": "amount control border/inside",
+      "foreground": "rgb(119, 135, 123)",
+      "background": "rgb(16, 19, 18)",
+      "ratio": 4.93
+    },
+    {
+      "name": "amount control border/outside",
+      "foreground": "rgb(119, 135, 123)",
+      "background": "rgb(24, 28, 26)",
+      "ratio": 4.54
+    },
+    {
+      "name": "primary label/fill",
+      "foreground": "rgb(24, 34, 14)",
+      "background": "rgb(192, 239, 128)",
+      "ratio": 12.48
+    }
+  ],
+  "font": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Arial, sans-serif"
+}

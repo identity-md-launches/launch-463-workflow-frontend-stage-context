@@ -1,0 +1,65 @@
+{
+  "chainId": 11155111,
+  "repoUrl": "https://github.com/identity-md-launches/launch-458-mockimd-comptoken-mockworkoracle-cdpvaul",
+  "version": 1,
+  "launchId": "99abf4b8-1462-4136-a6c4-b75d6a3cbd76",
+  "manifest": {
+    "kind": "evm_project",
+    "pool": {
+      "fee": 3000,
+      "tickSpacing": 60,
+      "initialPrice": "79228162514264337593543950336",
+      "pairedCurrency": "0x0000000000000000000000000000000000000000"
+    },
+    "notes": "Sepolia COMP proof of concept with a fixed testnet accounting price of 1 IMD = 1 COMP. LaunchToken (CPL) is the launch asset; CompToken (COMP) is the vault's elastic-supply debt token. The pool pairs CPL with native ETH and has no hook. The factory supplies the LP and MerkleDistributor. CDPVault receives MockIMD and zero compToken and oracle addresses, selecting its self-contained constructor mode. It creates and permanently binds CompToken and MockWorkOracle during construction; no initialization calls are needed or authorized. Their addresses are available from CDPVault.compToken() and CDPVault.oracle(). Both setVault and setOracle are already closed when construction completes. Review finding in the accepted source: DeploymentConfig.sol hard-codes the retained mock-faucet authority; MockIMD and MockWorkOracle expose no policy-owner constructor parameter. This conflicts with ownership derived exclusively from policy via $owner and requires resolution before admission; this manifest describes the accepted constructors and does not authorize a privileged wallet. Services own policy, signed artifact linkage, source publication, attestation, admission, deployment and frontend startup. The manifest initialPrice is decimal sqrtPriceX96; a pinned policy with initialMarketCapWei determines the effective opening price.",
+    "token": {
+      "name": "COMP Launch",
+      "symbol": "CPL",
+      "contract": "LaunchToken",
+      "decimals": 18
+    },
+    "contracts": [
+      {
+        "contract": "MockIMD",
+        "constructorArgs": []
+      },
+      {
+        "contract": "CDPVault",
+        "constructorArgs": [
+          "$contract:MockIMD",
+          "0x0000000000000000000000000000000000000000",
+          "0x0000000000000000000000000000000000000000"
+        ]
+      }
+    ]
+  },
+  "contracts": [
+    {
+      "name": "LaunchToken",
+      "txHash": "0xb20931437c7a238f05407460bce7bc98087e7a8e571ca0a673bb8cd75f2acd1b",
+      "abiHash": "38880b8e56d42ce900f744a7908c7139632a49f1c3f33385c64ceaed29d37bee",
+      "address": "0xa850f31f678a7bb91b5f6d7da2d0eacb40b585b5",
+      "blockNumber": 11809075,
+      "creationCodeHash": "2c0730613492db74e42660fe98a387c163db8d2d140483c76037e39bd3c7f47f"
+    },
+    {
+      "name": "MockIMD",
+      "txHash": "0xb20931437c7a238f05407460bce7bc98087e7a8e571ca0a673bb8cd75f2acd1b",
+      "abiHash": "785554a073881eadc16cf50ec69aefac00a95db003ed535556ed6a0f054c0e17",
+      "address": "0x5e223eb2ea5d55b4a8d4190e94df3524b58dfc79",
+      "blockNumber": 11809075,
+      "creationCodeHash": "50af82e992afcfd74dbd1a3ef7983ef1e24c034d994ba21c5b377737f837cddc"
+    },
+    {
+      "name": "CDPVault",
+      "txHash": "0xb20931437c7a238f05407460bce7bc98087e7a8e571ca0a673bb8cd75f2acd1b",
+      "abiHash": "fa5ff20a128eba9e5cc76db118ee84e1149c5a2fa1b616084b92f9abed8b6dc3",
+      "address": "0x583d90a83cfd184ddde2bed7d7b3726892adc898",
+      "blockNumber": 11809075,
+      "creationCodeHash": "5afe7aefa715229ad98b024825111a97deccccc24acdf021e9c03a661a182bcb"
+    }
+  ],
+  "sourceCommit": "1fc863f3880a7541308f51d16f76c39185e07137",
+  "abiInstructions": "Build ABIs from this exact source commit; compare canonicalKeccak(abi) with abiHash. Verify deployed code on the stated chain before enabling transactions.",
+  "attestationHash": "4dc3f31da0f0b54bf33dd9db6b750cdcd0413d2219eff72849854795122eeea6"
+}

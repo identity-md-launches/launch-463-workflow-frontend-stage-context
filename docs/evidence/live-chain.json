@@ -1,0 +1,90 @@
+{
+  "result": "passed",
+  "startedAt": "2026-09-29T17:55:37.923Z",
+  "completedAt": "2026-09-29T17:55:38.981Z",
+  "command": "cd web && node scripts/check-chain.mjs",
+  "readOnly": true,
+  "transactionsBroadcast": 0,
+  "launchId": "99abf4b8-1462-4136-a6c4-b75d6a3cbd76",
+  "sourceCommit": "1fc863f3880a7541308f51d16f76c39185e07137",
+  "attestationHash": "4dc3f31da0f0b54bf33dd9db6b750cdcd0413d2219eff72849854795122eeea6",
+  "rpcUrl": "https://ethereum-sepolia-rpc.publicnode.com",
+  "chainId": 11155111,
+  "blockNumber": "11809155",
+  "blockHash": "0x8bbd134fe26c91eeb52541106ce0d2215a23bf00a52b17283dcb9e47f53b5e37",
+  "blockTimestamp": "2026-09-29T17:55:36.000Z",
+  "allContractReadsPinnedToBlock": true,
+  "vaultLinks": {
+    "imdToken": "0x5e223Eb2Ea5d55B4a8d4190e94Df3524B58Dfc79",
+    "compToken": "0x00C5914EF3c133C96eD05d7698D1367ED771E75A",
+    "oracle": "0x58Ed6B9B0a85501f0563658543D259A1648eB6d8"
+  },
+  "minimumCollateralRatio": "150",
+  "deployerGettersAgree": true,
+  "contracts": [
+    {
+      "name": "LaunchToken",
+      "address": "0xa850F31f678a7BB91b5F6D7Da2d0eACb40b585b5",
+      "addressSource": "deployment handoff",
+      "codeBytes": 1722,
+      "codeKeccak256": "01fb92b21a7414fcac4480618142f8968a5d2bae8071370fb5e9369b97fc55bc",
+      "abiCanonicalKeccak256": "38880b8e56d42ce900f744a7908c7139632a49f1c3f33385c64ceaed29d37bee",
+      "symbol": "CPL",
+      "decimals": 18,
+      "totalSupplyMinorUnits": "1000000000000000000000000000"
+    },
+    {
+      "name": "MockIMD",
+      "address": "0x5e223Eb2Ea5d55B4a8d4190e94Df3524B58Dfc79",
+      "addressSource": "deployment handoff",
+      "codeBytes": 1966,
+      "codeKeccak256": "ebd8416ae4872cdda052509ffbe0eb8999ada55cd2ccf9a84d001a5bb282fb3b",
+      "abiCanonicalKeccak256": "785554a073881eadc16cf50ec69aefac00a95db003ed535556ed6a0f054c0e17",
+      "symbol": "IMD",
+      "decimals": 18,
+      "totalSupplyMinorUnits": "0",
+      "deployer": "0x5167D014a056E43883e1BBEa5530c3c0dC993281"
+    },
+    {
+      "name": "CDPVault",
+      "address": "0x583D90a83cfD184ddDE2Bed7d7b3726892Adc898",
+      "addressSource": "deployment handoff",
+      "codeBytes": 4903,
+      "codeKeccak256": "d350b58f0f70b6d26d980c7e95061d9518ad60169ffe405f6e84b6c506c9adb9",
+      "abiCanonicalKeccak256": "fa5ff20a128eba9e5cc76db118ee84e1149c5a2fa1b616084b92f9abed8b6dc3"
+    },
+    {
+      "name": "CompToken",
+      "address": "0x00C5914EF3c133C96eD05d7698D1367ED771E75A",
+      "addressSource": "CDPVault.compToken()",
+      "codeBytes": 2583,
+      "codeKeccak256": "e7062a0c3ae55b7578864437a18fa30e78b6ff155c45f6c9486eb4f7c14efedc",
+      "abiCanonicalKeccak256": "c80da5f74d5a8d99a762ded44c94029a0953469e050e85d74da380d751b74086",
+      "symbol": "COMP",
+      "decimals": 18,
+      "totalSupplyMinorUnits": "0",
+      "vault": "0x583D90a83cfD184ddDE2Bed7d7b3726892Adc898"
+    },
+    {
+      "name": "MockWorkOracle",
+      "address": "0x58Ed6B9B0a85501f0563658543D259A1648eB6d8",
+      "addressSource": "CDPVault.oracle()",
+      "codeBytes": 1003,
+      "codeKeccak256": "7ee7bf8fe99a28f487ad4a3b7f82efe46ead024fe59c8f8bd46a41f7866a7d9f",
+      "abiCanonicalKeccak256": "704b64283dcaed93661907220b38facfb1ac94aeaf53cb13b9be7a063147fac4",
+      "vault": "0x583D90a83cfD184ddDE2Bed7d7b3726892Adc898",
+      "deployer": "0x5167D014a056E43883e1BBEa5530c3c0dC993281"
+    }
+  ],
+  "rpcAttempts": [
+    {
+      "rpcUrl": "https://ethereum-sepolia-rpc.publicnode.com",
+      "result": "passed"
+    }
+  ],
+  "limitations": [
+    "Read-only verification does not establish successful wallet prompts, funded transactions or future RPC availability.",
+    "Nonempty runtime code and reciprocal links were checked; no creation/runtime bytecode equivalence claim is made.",
+    "CompToken and MockWorkOracle addresses are derived from the attested vault; their ABI copies are pinned to the deployed source commit and are not separate attested handoff contract entries."
+  ]
+}
